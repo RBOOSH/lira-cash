@@ -1,180 +1,59 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<title>LIRA CASH - المحفظة السورية</title>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;900&display=swap" rel="stylesheet">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LIRA CASH</title>
+<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiTElSQSBDQVNIIiwic2hvcnRfbmFtZSI6IkxJUkEiLCJkaXNwbGF5Ijoic3RhbmRhbG9uZSIsImJhY2tncm91bmRfY29sb3IiOiIjMDgwODA4In0=">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@700;900&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Tajawal',sans-serif}
-body{background:#080808;color:#fff;overflow-x:hidden}
-::-webkit-scrollbar{display:none}
-.hdr{padding:20px 18px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:#080808;z-index:10}
-.logo{font-weight:900;font-size:24px;letter-spacing:1px}.logo b{color:#d4ff00}
-.pill{background:#1a1a1a;border:1px solid #2a2a2a;padding:6px 12px;border-radius:100px;font-size:12px;display:flex;align-items:center;gap:6px}
-.dot{width:8px;height:8px;background:#22c55e;border-radius:50%;animation:pulse 2s infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-.card{margin:0 14px;background:linear-gradient(135deg,#eaff00 0%,#c8ff00 50%,#aaff00 100%);color:#000;border-radius:28px;padding:24px;position:relative;overflow:hidden}
-.card::after{content:'';position:absolute;width:200px;height:200px;background:rgba(0,0,0,.07);border-radius:50%;top:-60px;left:-40px}
-.balLab{font-size:12px;opacity:.6;font-weight:700;letter-spacing:1px}.bal{font-size:42px;font-weight:900;direction:ltr;text-align:left;margin:4px 0}
-.row{display:flex;gap:10px;margin-top:16px;position:relative;z-index:1}
-.mini{flex:1;background:rgba(0,0,0,.12);backdrop-filter:blur(10px);border-radius:16px;padding:12px}
-.mini small{font-size:10px;opacity:.6}.mini b{font-size:16px;display:block;direction:ltr}
-.actions{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:18px 14px}
-.act{background:#151515;border:1px solid #222;border-radius:20px;padding:16px 6px;text-align:center;transition:.2s}.act:active{scale:.92}
-.act .ic{width:52px;height:52px;margin:0 auto 8px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900}
+body{background:#080808;color:#fff;padding-bottom:80px}
+.hdr{padding:18px;display:flex;justify-content:space-between}
+.card{margin:14px;background:linear-gradient(135deg,#eaff00,#c8ff00);color:#000;border-radius:28px;padding:22px}
+.bal{font-size:40px;font-weight:900;direction:ltr;text-align:left}
+.mini{flex:1;background:rgba(0,0,0,.12);border-radius:14px;padding:10px}
+.actions{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:14px}
+.act{background:#151515;border:1px solid #222;border-radius:20px;padding:14px;text-align:center}.act:active{scale:.92}
+.ic{width:50px;height:50px;margin:0 auto 6px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900}
 .c1{background:#d4ff00;color:#000}.c2{background:#222;color:#fff}.c3{background:#fff;color:#000}.c4{background:#7c3aed;color:#fff}
-.act span{font-size:11px;font-weight:700}
-.sec{padding:0 14px;margin-top:6px}.sec h3{font-size:15px;margin-bottom:10px;opacity:.9}
-.tx{background:#121212;border:1px solid #1e1e1e;border-radius:16px;padding:14px;display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-.txL{display:flex;gap:10px;align-items:center}.txI{width:40px;height:40px;background:#1e1e1e;border-radius:12px;display:flex;align-items:center;justify-content:center}
-.nav{position:fixed;bottom:0;left:0;right:0;background:#111;border-top:1px solid #222;display:flex;justify-content:space-around;padding:10px 0 18px;z-index:50}
-.nav div{font-size:10px;text-align:center;opacity:.4}.nav div.on{opacity:1;color:#d4ff00}
-.modal{position:fixed;inset:0;background:#0a0a0a;z-index:100;display:none;flex-direction:column;padding:22px;animation:slide .3s}@keyframes slide{from{transform:translateY(100%)}to{transform:translateY(0)}}
-.modal.open{display:flex}.topBar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
-.inp{width:100%;background:#181818;border:1.5px solid #2a2a2a;border-radius:14px;padding:15px;font-size:16px;color:#fff;outline:none;transition:.2s;margin:8px 0}.inp:focus{border-color:#d4ff00}
-.btn{width:100%;background:#d4ff00;color:#000;border:0;border-radius:14px;padding:16px;font-weight:900;font-size:16px;margin-top:10px}.btn:active{scale:.98}.btnS{background:#1e1e1e;color:#fff;border:1px solid #2a2a2a}
-.curSel{display:flex;gap:8px;margin:10px 0}.curSel button{flex:1;padding:12px;border-radius:12px;border:1.5px solid #2a2a2a;background:#181818;color:#fff;font-weight:700}.curSel button.on{background:#d4ff00;color:#000;border-color:#d4ff00}
-.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:#fff;color:#000;padding:12px 20px;border-radius:100px;font-weight:700;font-size:13px;z-index:200;display:none}
-.qrBox{background:#fff;border-radius:22px;padding:18px;text-align:center;color:#000;margin:16px 0}
+.tx{background:#121212;border:1px solid #1e1e1e;border-radius:14px;padding:12px;display:flex;justify-content:space-between;margin-bottom:8px}
+.modal{position:fixed;inset:0;background:#0a0a0a;z-index:100;display:none;padding:20px;flex-direction:column}.modal.open{display:flex}
+.inp{width:100%;background:#181818;border:1.5px solid #2a2a2a;border-radius:12px;padding:14px;color:#fff;margin:6px 0}
+.btn{width:100%;background:#d4ff00;color:#000;border:0;border-radius:12px;padding:14px;font-weight:900;margin-top:8px}
+.btnS{background:#1e1e1e;color:#fff;border:1px solid #2a2a2a}
+.curSel{display:flex;gap:8px}.curSel button{flex:1;padding:10px;border-radius:10px;background:#181818;color:#fff;border:1px solid #333}.curSel button.on{background:#d4ff00;color:#000}
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:#fff;color:#000;padding:10px 18px;border-radius:100px;font-weight:700;display:none;z-index:200}
+.qr{background:#fff;border-radius:18px;padding:16px;text-align:center;color:#000;margin:12px 0}
 </style>
 </head>
 <body>
-<div class="hdr">
-<div class="logo">LIRA <b>CASH</b></div>
-<div style="display:flex;gap:8px"><div class="pill"><span class="dot"></span>متصل</div><div id="av" style="width:36px;height:36px;background:#d4ff00;color:#000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900">R</div></div>
-</div>
+<div class="hdr"><div style="font-weight:900;font-size:22px">LIRA <span style="color:#d4ff00">CASH</span></div><div style="display:flex;gap:8px"><button class="btnS" style="padding:6px 12px;border-radius:100px;font-size:11px" onclick="genPDF()">📄 PDF</button><div style="width:32px;height:32px;background:#d4ff00;color:#000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900">R</div></div></div>
+<div class="card"><small>الرصيد الإجمالي • 1$=15,000 SYP</small><div class="bal" id="tot">0 SYP</div><div style="display:flex;gap:8px;margin-top:12px"><div class="mini"><small>ليرة سوري</small><b id="syp">0</b></div><div class="mini"><small>دولار</small><b id="usd">$0</b></div></div><div style="display:flex;gap:8px;margin-top:12px"><button class="btn" style="margin:0;background:#000;color:#d4ff00" onclick="openM('add')">+ شحن رصيد</button><button onclick="shareWA('مرحبا، هذا رصيدي في LIRA CASH: '+document.getElementById('tot').innerText)" style="background:#25D366;color:#fff;border:0;border-radius:12px;padding:10px 14px;font-weight:700">واتساب</button></div></div>
+<div class="actions"><div class="act" onclick="openM('send')"><div class="ic c1">↗</div>تحويل</div><div class="act" onclick="openM('rec')"><div class="ic c2">↙</div>استلام</div><div class="act" onclick="openM('ex')"><div class="ic c3">⇄</div>تصريف</div><div class="act" onclick="genPDF()"><div class="ic c4">📄</div>كشف</div></div>
+<div style="padding:0 14px"><h3>العمليات الأخيرة</h3><div id="list" style="margin-top:10px"></div></div>
 
-<div class="card">
-<div class="balLab">الرصيد الإجمالي • 1$ = 15,000 SYP</div>
-<div class="bal" id="totalBal">0 SYP</div>
-<div class="row">
-<div class="mini"><small>ليرة سوري</small><b id="sypBal">0 SYP</b></div>
-<div class="mini"><small>دولار أمريكي</small><b id="usdBal">$0.00</b></div>
-</div>
-<div style="margin-top:14px;display:flex;gap:8px;position:relative;z-index:1">
-<button class="btn" style="margin:0;padding:10px;font-size:12px;background:#000;color:#d4ff00" onclick="openM('add')">+ شحن رصيد</button>
-<button class="btnS" style="flex:1;padding:10px;border-radius:12px;font-size:12px" onclick="resetApp()">إعادة ضبط</button>
-</div>
-</div>
-
-<div class="actions">
-<div class="act" onclick="openM('send')"><div class="ic c1">↗</div><span>تحويل</span></div>
-<div class="act" onclick="openM('rec')"><div class="ic c2">↙</div><span>استلام</span></div>
-<div class="act" onclick="openM('ex')"><div class="ic c3">⇄</div><span>تصريف</span></div>
-<div class="act" onclick="toastMsg('التوثيق قريبا - انت موثق حاليا ✅')"><div class="ic c4">✓</div><span>موثق</span></div>
-</div>
-
-<div class="sec"><h3>العمليات الأخيرة</h3><div id="txList"></div></div>
-
-<div class="nav">
-<div class="on">🏠<br>الرئيسية</div><div onclick="openM('send')">↗<br>تحويل</div><div onclick="openM('ex')">⇄<br>سعر</div><div onclick="toastMsg('قريبا')">👤<br>حسابي</div>
-</div>
-
-<!-- SEND -->
-<div class="modal" id="m_send">
-<div class="topBar"><h2>تحويل أموال</h2><b onclick="closeM()" style="font-size:24px">×</b></div>
-<label style="font-size:12px;opacity:.6">رقم المستلم</label>
-<input class="inp" id="toPhone" placeholder="09xxxxxxxx" inputmode="numeric">
-<label style="font-size:12px;opacity:.6">العملة</label>
-<div class="curSel"><button id="cSYP" class="on" onclick="setCur('SYP')">SYP ليرة</button><button id="cUSD" onclick="setCur('USD')">USD دولار</button></div>
-<label style="font-size:12px;opacity:.6">المبلغ</label>
-<input class="inp" id="amnt" type="number" placeholder="0" inputmode="decimal">
-<div style="background:#151515;border-radius:12px;padding:12px;font-size:12px;margin:8px 0">الرسوم: <b style="color:#d4ff00">مجانا</b> • يصل فورا</div>
-<button class="btn" onclick="doSend()">تأكيد التحويل</button>
-<button class="btn btnS" onclick="closeM()">إلغاء</button>
-</div>
-
-<!-- RECEIVE -->
-<div class="modal" id="m_rec">
-<div class="topBar"><h2>استلام</h2><b onclick="closeM()" style="font-size:24px">×</b></div>
-<div class="qrBox">
-<div style="font-size:11px;opacity:.6">رقم محفظتك</div>
-<div id="myPhoneTxt" style="font-size:26px;font-weight:900;margin:8px 0;direction:ltr">09xxxxxxx</div>
-<img id="qrImg" style="width:180px;height:180px;margin:10px auto;border-radius:12px" src="">
-<div style="font-size:11px;opacity:.6">اعطي هذا الرمز للمرسل - شغال بدون نت</div>
-</div>
-<button class="btn" onclick="copyPhone()">نسخ الرقم</button>
-<button class="btn btnS" onclick="closeM()">إغلاق</button>
-</div>
-
-<!-- EXCHANGE -->
-<div class="modal" id="m_ex">
-<div class="topBar"><h2>تصريف العملات</h2><b onclick="closeM()" style="font-size:24px">×</b></div>
-<div style="background:#151515;border-radius:16px;padding:14px;text-align:center">سعر اليوم: <b style="color:#d4ff00">1 USD = 15,000 SYP</b></div>
-<label style="font-size:12px;opacity:.6;margin-top:12px;display:block">من</label>
-<input class="inp" id="exSYP" type="number" placeholder="SYP" oninput="calcEx('syp')">
-<div style="text-align:center;font-size:20px;margin:4px 0">⇅</div>
-<label style="font-size:12px;opacity:.6">إلى</label>
-<input class="inp" id="exUSD" type="number" placeholder="USD" oninput="calcEx('usd')">
-<button class="btn" onclick="doExchange()">تنفيذ التصريف</button>
-<button class="btn btnS" onclick="closeM()">إلغاء</button>
-</div>
-
-<!-- ADD BALANCE -->
-<div class="modal" id="m_add">
-<div class="topBar"><h2>شحن رصيد تجريبي</h2><b onclick="closeM()" style="font-size:24px">×</b></div>
-<button class="btn" onclick="addBal(50000,0)">+ 50,000 SYP</button>
-<button class="btn" onclick="addBal(0,10)">+ $10 USD</button>
-<button class="btn" onclick="addBal(150000,0)">+ 150,000 SYP</button>
-<button class="btn btnS" onclick="closeM()">إغلاق</button>
-</div>
-
-<!-- AUTH -->
-<div class="modal" id="m_auth" style="display:flex;justify-content:center">
-<div style="width:100%"><h1 style="font-size:36px;line-height:1.1">أهلا بك في<br><span style="color:#d4ff00">LIRA CASH</span></h1><p style="opacity:.5;margin:12px 0 22px">أسرع محفظة سورية - تحويل فوري مجانا</p>
-<input class="inp" id="ph" placeholder="09xxxxxxxx" value="0999123456"><input class="inp" id="pw" type="password" placeholder="كلمة السر" value="1234">
-<button class="btn" onclick="doLogin()">دخول + 100,000 SYP هدية</button>
-<p style="text-align:center;font-size:11px;opacity:.4;margin-top:14px">بدون إنترنت • يعمل على المتصفح فقط</p>
-</div>
-</div>
-
+<div class="modal" id="m_send"><div style="display:flex;justify-content:space-between"><h2>تحويل</h2><b onclick="closeM()" style="font-size:22px">×</b></div><input class="inp" id="to" placeholder="09xxxxxxxx"><div class="curSel"><button id="bS" class="on" onclick="setC('SYP')">SYP</button><button id="bU" onclick="setC('USD')">USD</button></div><input class="inp" id="am" type="number" placeholder="المبلغ"><button class="btn" onclick="doSend()">تأكيد + ارسال واتساب</button><button class="btn btnS" onclick="closeM()">الغاء</button></div>
+<div class="modal" id="m_rec"><div style="display:flex;justify-content:space-between"><h2>استلام</h2><b onclick="closeM()" style="font-size:22px">×</b></div><div class="qr"><div id="myP" style="font-size:24px;font-weight:900;direction:ltr">09xx</div><img id="qrImg" style="width:180px;height:180px"><p style="font-size:11px;opacity:.6">شارك هذا الكود</p><button class="btn" onclick="shareWA('حوللي على LIRA CASH: '+user.phone+' https://rboosh.github.io/lira-cash/')">مشاركة واتساب 📲</button></div><button class="btn btnS" onclick="closeM()">اغلاق</button></div>
+<div class="modal" id="m_ex"><div style="display:flex;justify-content:space-between"><h2>تصريف</h2><b onclick="closeM()" style="font-size:22px">×</b></div><input class="inp" id="exS" type="number" placeholder="SYP" oninput="calc('s')"><div style="text-align:center">⇅</div><input class="inp" id="exU" type="number" placeholder="USD" oninput="calc('u')"><button class="btn" onclick="doEx()">تصريف</button><button class="btn btnS" onclick="closeM()">الغاء</button></div>
+<div class="modal" id="m_add"><h2>شحن تجريبي</h2><button class="btn" onclick="addB(50000,0)">+50,000 SYP</button><button class="btn" onclick="addB(0,10)">+ $10</button><button class="btn" onclick="addB(150000,25)">+150k + $25</button><button class="btn btnS" onclick="closeM()">اغلاق</button></div>
+<div class="modal" id="m_auth" style="display:flex;justify-content:center"><div><h1 style="font-size:34px">LIRA <span style="color:#d4ff00">CASH</span></h1><p style="opacity:.5;margin:10px 0">ادخل واحصل 100k هدية</p><input class="inp" id="ph" value="0999123456"><input class="inp" id="pw" type="password" value="1234"><button class="btn" onclick="login()">دخول</button></div></div>
 <div class="toast" id="toast"></div>
-
 <script>
-let RATE=15000,cur='SYP';
-let user=JSON.parse(localStorage.getItem('lira_user')||'null');
-const $=id=>document.getElementById(id);
-function toastMsg(t){let el=$('toast');el.innerText=t;el.style.display='block';setTimeout(()=>el.style.display='none',3000)}
-function openM(id){$('m_'+id).classList.add('open')}function closeM(){document.querySelectorAll('.modal').forEach(m=>{if(m.id!='m_auth')m.classList.remove('open')})}
-function setCur(c){cur=c;$('cSYP').classList.toggle('on',c=='SYP');$('cUSD').classList.toggle('on',c=='USD');$('amnt').placeholder=c=='SYP'?'مثال: 50000':'مثال: 5'}
-function calcEx(from){let s=$('exSYP'),u=$('exUSD');if(from=='syp'){let v=parseFloat(s.value)||0;u.value=(v/RATE).toFixed(2)}else{let v=parseFloat(u.value)||0;s.value=Math.round(v*RATE)}}
-function refresh(){
-if(!user){$('m_auth').style.display='flex';return}$('m_auth').style.display='none';
-$('sypBal').innerText=(user.syp||0).toLocaleString()+' SYP';$('usdBal').innerText='$'+(user.usd||0).toFixed(2);
-let total=(user.syp||0)+(user.usd||0)*RATE;$('totalBal').innerText=total.toLocaleString()+' SYP';
-$('av').innerText=user.phone.slice(-1);$('myPhoneTxt').innerText=user.phone;
-$('qrImg').src='https://api.qrserver.com/v1/create-qr-code/?size=200x200&data='+encodeURIComponent('LIRA:'+user.phone);
-let tx=JSON.parse(localStorage.getItem('tx_'+user.phone)||'[]');
-if(tx.length==0){$('txList').innerHTML='<div style="text-align:center;opacity:.3;padding:30px">لا يوجد عمليات بعد<br>حول اول مبلغ الان</div>'}
-else{$('txList').innerHTML=tx.map(t=>`<div class="tx"><div class="txL"><div class="txI">${t.type=='send'?'↗':t.type=='ex'?'⇄':'↙'}</div><div><div style="font-weight:700;font-size:13px">${t.title}</div><div style="font-size:11px;opacity:.5">${t.time}</div></div></div><div style="font-weight:900;direction:ltr">${t.amount}</div></div>`).join('')}
-}
-function doLogin(){let ph=$('ph').value.trim();if(ph.length<10){toastMsg('رقم غير صحيح');return}user={phone:ph,syp:100000,usd:5};localStorage.setItem('lira_user',JSON.stringify(user));refresh();toastMsg('تم شحن 100,000 هدية 🎉')}
-function doSend(){
-let to=$('toPhone').value.trim(),am=parseFloat($('amnt').value);
-if(!to||to.length<10){toastMsg('اكتب رقم المستلم');return}if(!am||am<=0){toastMsg('اكتب المبلغ');return}
-if(cur=='SYP'&&am>user.syp){toastMsg('رصيد ليرة لا يكفي');return}
-if(cur=='USD'&&am>user.usd){toastMsg('رصيد دولار لا يكفي');return}
-if(cur=='SYP')user.syp-=am;else user.usd-=am;
-localStorage.setItem('lira_user',JSON.stringify(user));
-let tx=JSON.parse(localStorage.getItem('tx_'+user.phone)||'[]');
-tx.unshift({type:'send',title:'تحويل إلى '+to,amount:'-'+am+' '+cur,time:new Date().toLocaleTimeString('ar-SY')});
-localStorage.setItem('tx_'+user.phone,JSON.stringify(tx));
-closeM();refresh();toastMsg('تم التحويل إلى '+to+' ✅');$('toPhone').value='';$('amnt').value='';
-}
-function doExchange(){
-let s=parseFloat($('exSYP').value)||0,u=parseFloat($('exUSD').value)||0;
-if(s>0){if(s>user.syp){toastMsg('لا يكفي SYP');return}user.syp-=s;user.usd+=s/RATE;var t=`تصريف ${s.toLocaleString()} SYP → ${(s/RATE).toFixed(2)} USD`}
-else if(u>0){if(u>user.usd){toastMsg('لا يكفي USD');return}user.usd-=u;user.syp+=Math.round(u*RATE);var t=`تصريف $${u} → ${Math.round(u*RATE).toLocaleString()} SYP`}
-else{toastMsg('اكتب مبلغ');return}
-localStorage.setItem('lira_user',JSON.stringify(user));
-let tx=JSON.parse(localStorage.getItem('tx_'+user.phone)||'[]');
-tx.unshift({type:'ex',title:t,amount:'⇄',time:new Date().toLocaleTimeString('ar-SY')});
-localStorage.setItem('tx_'+user.phone,JSON.stringify(tx));
-closeM();refresh();toastMsg('تم التصريف بنجاح ✅');$('exSYP').value='';$('exUSD').value='';
-}
-function addBal(s,u){user.syp+=s;user.usd+=u;localStorage.setItem('lira_user',JSON.stringify(user));refresh();closeM();toastMsg('تم الشحن ✅')}
-function copyPhone(){navigator.clipboard.writeText(user.phone);toastMsg('تم نسخ الرقم')}
-function resetApp(){if(confirm('هل تريد حذف كل البيانات؟')){localStorage.clear();location.reload()}}
-setCur('SYP');refresh();
+let RATE=15000,cur='SYP',user=JSON.parse(localStorage.getItem('lira_user')||'null');
+const $=i=>document.getElementById(i);
+const toast=t=>{let e=$('toast');e.innerText=t;e.style.display='block';setTimeout(()=>e.style.display='none',3000)}
+const openM=i=>$(`m_${i}`).classList.add('open');const closeM=()=>document.querySelectorAll('.modal').forEach(m=>{if(m.id!='m_auth')m.classList.remove('open')});
+function setC(c){cur=c;$('bS').classList.toggle('on',c=='SYP');$('bU').classList.toggle('on',c=='USD')}
+function calc(t){if(t=='s')$('exU').value=((parseFloat($('exS').value)||0)/RATE).toFixed(2);else $('exS').value=Math.round((parseFloat($('exU').value)||0)*RATE)}
+function shareWA(text){window.open('https://wa.me/?text='+encodeURIComponent(text),'_blank')}
+function refresh(){if(!user){$('m_auth').style.display='flex';return}$('m_auth').style.display='none';$('syp').innerText=(user.syp||0).toLocaleString()+' SYP';$('usd').innerText='$'+(user.usd||0).toFixed(2);$('tot').innerText=((user.syp||0)+(user.usd||0)*RATE).toLocaleString()+' SYP';$('myP').innerText=user.phone;$('qrImg').src='https://api.qrserver.com/v1/create-qr-code/?size=200x200&data='+encodeURIComponent(user.phone);let tx=JSON.parse(localStorage.getItem('tx_'+user.phone)||'[]');$('list').innerHTML=tx.length?tx.map(x=>`<div class="tx"><div><b>${x.title}</b><br><small style="opacity:.5">${x.time}</small></div><div><b style="direction:ltr">${x.amount}</b><br><button onclick="shareWA('عملية LIRA CASH: ${x.title} - ${x.amount}')" style="font-size:10px;background:#25D366;color:#fff;border:0;border-radius:8px;padding:4px 8px">واتساب</button></div></div>`).join(''):'<div style="text-align:center;opacity:.3;padding:20px">لا يوجد عمليات</div>'}
+function login(){let ph=$('ph').value;if(ph.length<10){toast('رقم غلط');return}user={phone:ph,syp:100000,usd:5};localStorage.setItem('lira_user',JSON.stringify(user));refresh();toast('100,000 هدية 🎉')}
+function doSend(){let to=$('to').value,am=parseFloat($('am').value);if(!to||!am){toast('اكمل البيانات');return}if(cur=='SYP'&&am>user.syp){toast('رصيد غير كافي');return}if(cur=='USD'&&am>user.usd){toast('رصيد غير كافي');return}if(cur=='SYP')user.syp-=am;else user.usd-=am;localStorage.setItem('lira_user',JSON.stringify(user));let tx=JSON.parse(localStorage.getItem('tx_'+user.phone)||'[]');tx.unshift({title:`تحويل إلى ${to}`,amount:`-${am} ${cur}`,time:new Date().toLocaleString('ar-SY')});localStorage.setItem('tx_'+user.phone,JSON.stringify(tx));closeM();refresh();let msg=`✅ تم التحويل عبر LIRA CASH\nالمبلغ: ${am} ${cur}\nإلى: ${to}\nمن: ${user.phone}\nhttps://rboosh.github.io/lira-cash/`;shareWA(msg)}
+function doEx(){let s=parseFloat($('exS').value)||0,u=parseFloat($('exU').value)||0;if(s){if(s>user.syp){toast('لا يكفي');return}user.syp-=s;user.usd+=s/RATE}else if(u){if(u>user.usd){toast('لا يكفي');return}user.usd-=u;user.syp+=Math.round(u*RATE)}else{toast('اكتب مبلغ');return}localStorage.setItem('lira_user',JSON.stringify(user));let tx=JSON.parse(localStorage.getItem('tx_'+user.phone)||'[]');tx.unshift({title:'تصريف عملة',amount:'⇄',time:new Date().toLocaleString('ar-SY')});localStorage.setItem('tx_'+user.phone,JSON.stringify(tx));closeM();refresh();toast('تم التصريف ✅')}
+function addB(s,u){user.syp+=s;user.usd+=u;localStorage.setItem('lira_user',JSON.stringify(user));refresh();closeM();toast('تم الشحن')}
+function genPDF(){if(!user){toast('سجل اولا');return}const {jsPDF}=window.jspdf;const doc=new jsPDF();doc.setFont('helvetica');doc.text('LIRA CASH - Statement',10,15);doc.text(`Phone: ${user.phone}`,10,25);doc.text(`SYP: ${user.syp}`,10,35);doc.text(`USD: ${user.usd}`,10,45);doc.text(`Total: ${(user.syp+user.usd*RATE).toLocaleString()} SYP`,10,55);let tx=JSON.parse(localStorage.getItem('tx_'+user.phone)||'[]');let y=70;tx.slice(0,20).forEach(t=>{doc.text(`${t.title} | ${t.amount} | ${t.time}`,10,y);y+=8});doc.save(`LIRA_${user.phone}.pdf`);toast('تم تحميل PDF 📄')}
+setC('SYP');refresh();
 </script>
 </body>
 </html>

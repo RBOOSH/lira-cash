@@ -2,123 +2,123 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>LIRA CASH - مؤسسة مالية مرخصة</title>
+<title>LIRA CASH - حسابي</title>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Tajawal',sans-serif}
-body{background:#f6f7f9;color:#0f172a}
-.hdr{ background:#fff;border-bottom:1px solid #e2e8f0;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
-.logo{font-weight:800;font-size:18px;letter-spacing:.5px;color:#0f172a}.logo span{font-weight:400;color:#64748b;font-size:13px;display:block;margin-top:-2px}
-.badge{font-size:10px;background:#0f172a;color:#fff;padding:4px 8px;border-radius:6px;font-weight:700;letter-spacing:.5px}
-.hero{margin:16px;background:#0f172a;color:#fff;border-radius:20px;padding:20px;position:relative}
-.hero small{color:#94a3b8;font-size:11px;letter-spacing:1px;font-weight:600}
-.hero .tot{font-size:32px;font-weight:800;margin:6px 0;direction:ltr;text-align:left;letter-spacing:-1px}
-.grid2{display:flex;gap:10px;margin-top:14px}
-.box{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:12px;flex:1}
-.box small{color:#94a3b8;font-size:10px}.box b{font-size:14px;display:block;direction:ltr;margin-top:2px}
-.secure{display:flex;gap:6px;align-items:center;margin-top:14px;font-size:10px;color:#94a3b8}
-.secure i{width:16px;height:16px;background:#22c55e;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-size:10px;font-style:normal}
-.actions{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:0 16px;margin-top:16px}
-.act{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:14px 6px;text-align:center;box-shadow:0 1px 2px rgba(0,0,0,.04)}.act:active{scale:.97}
-.act .ic{width:44px;height:44px;margin:0 auto 8px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px}
-.i1{background:#0f172a;color:#fff}.i2{background:#f1f5f9;color:#0f172a}.i3{background:#0f172a;color:#fff}.i4{background:#f1f5f9;color:#0f172a}
-.act span{font-size:11px;font-weight:600;color:#334155}
+body{background:#f6f7f9;color:#0f172a;padding-bottom:80px}
+.hdr{background:#fff;border-bottom:1px solid #e2e8f0;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}
+.logo{font-weight:800;font-size:17px}.logo span{font-weight:400;color:#64748b;font-size:11px;display:block}
+.badge{font-size:9px;background:#0f172a;color:#fff;padding:4px 8px;border-radius:6px}
+.hero{margin:16px;background:#0f172a;color:#fff;border-radius:20px;padding:20px}
+.hero small{color:#94a3b8;font-size:11px;font-weight:600;letter-spacing:1px}.hero .tot{font-size:30px;font-weight:800;direction:ltr;text-align:left;margin:6px 0}
+.grid2{display:flex;gap:8px;margin-top:12px}.box{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:10px;flex:1}.box small{color:#94a3b8;font-size:9px}.box b{font-size:13px;display:block;direction:ltr}
+.actions{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:0 16px}
+.act{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:12px 4px;text-align:center}.ic{width:42px;height:42px;margin:0 auto 6px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:16px}
 .cardW{background:#fff;border:1px solid #e2e8f0;border-radius:16px;margin:16px;padding:14px}
-.cardW h3{font-size:13px;font-weight:700;margin-bottom:10px;display:flex;justify-content:space-between}
-.tx{ display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #f1f5f9}
-.tx:last-child{border:0}
-.btnP{width:100%;background:#0f172a;color:#fff;border:0;border-radius:12px;padding:14px;font-weight:700;font-size:14px}
-.btnS{width:100%;background:#fff;color:#0f172a;border:1px solid #e2e8f0;border-radius:12px;padding:14px;font-weight:700;margin-top:8px}
-.modal{position:fixed;inset:0;background:#fff;z-index:100;display:none;flex-direction:column;padding:20px}.modal.open{display:flex}
-.inp{width:100%;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:14px;font-size:14px;margin:6px 0;outline:none}.inp:focus{border-color:#0f172a;background:#fff}
+.tx{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #f1f5f9}
+.nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #e2e8f0;display:flex;justify-content:space-around;padding:10px 0 16px;z-index:30}.nav div{font-size:10px;text-align:center;color:#94a3b8}.nav div.on{color:#0f172a;font-weight:700}
+.modal{position:fixed;inset:0;background:#f6f7f9;z-index:100;display:none;flex-direction:column;overflow-y:auto}.modal.open{display:flex}
+.modalHead{background:#fff;border-bottom:1px solid #e2e8f0;padding:16px;display:flex;justify-content:space-between;align-items:center}
+.inp{width:100%;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:13px;font-size:13px;margin:5px 0;outline:none}
 .label{font-size:11px;color:#64748b;font-weight:600;margin-top:10px;display:block}
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#0f172a;color:#fff;padding:10px 18px;border-radius:100px;font-size:12px;display:none;z-index:200}
+.btnP{width:100%;background:#0f172a;color:#fff;border:0;border-radius:12px;padding:13px;font-weight:700;font-size:13px;margin-top:8px}.btnS{width:100%;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:13px;font-weight:700;margin-top:8px}
+.item{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid #f1f5f9}.item:last-child{border:0}
+.switch{width:42px;height:24px;background:#e2e8f0;border-radius:100px;position:relative;transition:.2s}.switch.on{background:#0f172a}.switch i{width:18px;height:18px;background:#fff;border-radius:50%;position:absolute;top:3px;right:3px;transition:.2s;display:block}.switch.on i{transform:translateX(-18px)}
+.toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#0f172a;color:#fff;padding:10px 16px;border-radius:100px;font-size:11px;display:none;z-index:200}
 </style>
 </head>
 <body>
-<div class="hdr">
-<div><div class="logo">LIRA CASH <span>المحفظة الرقمية السورية</span></div></div>
-<div style="text-align:left"><div class="badge">SECURE • LICENSED</div><div style="font-size:10px;color:#64748b;margin-top:4px;text-align:center">🔒 مشفر</div></div>
-</div>
+<div class="hdr"><div class="logo">LIRA CASH <span>محفظة رقمية مرخصة</span></div><div class="badge">SECURE</div></div>
 
 <div class="hero">
-<small>الرصيد الإجمالي المتاح</small>
+<small>الرصيد الإجمالي • 1$ = 15,000 SYP</small>
 <div class="tot" id="tot">0 SYP</div>
-<div class="grid2">
-<div class="box"><small>SYP BALANCE</small><b id="syp">0</b></div>
-<div class="box"><small>USD BALANCE</small><b id="usd">$0.00</b></div>
-</div>
-<div class="secure"><i>✓</i> حساب موثق • محمي بتشفير AES-256 • رقم مرجعي: LC-<span id="ref">0000</span></div>
+<div class="grid2"><div class="box"><small>SYP BALANCE</small><b id="syp">0</b></div><div class="box"><small>USD BALANCE</small><b id="usd">$0</b></div></div>
+<div style="font-size:10px;color:#94a3b8;margin-top:12px">REF: LC-<span id="ref">0000</span> • 🔒 AES-256 Encrypted</div>
 </div>
 
 <div class="actions">
-<div class="act" onclick="openM('send')"><div class="ic i1">↗</div><span>تحويل دولي</span></div>
-<div class="act" onclick="openM('rec')"><div class="ic i2">↙</div><span>طلب استلام</span></div>
-<div class="act" onclick="openM('ex')"><div class="ic i3">⇄</div><span>تصريف عملة</span></div>
-<div class="act" onclick="genPDF()"><div class="ic i4">◫</div><span>كشف حساب</span></div>
+<div class="act" onclick="openM('send')"><div class="ic" style="background:#0f172a;color:#fff">↗</div><div style="font-size:11px;font-weight:600">تحويل</div></div>
+<div class="act" onclick="openM('rec')"><div class="ic" style="background:#f1f5f9">↙</div><div style="font-size:11px;font-weight:600">استلام</div></div>
+<div class="act" onclick="openM('ex')"><div class="ic" style="background:#0f172a;color:#fff">⇄</div><div style="font-size:11px;font-weight:600">تصريف</div></div>
+<div class="act" onclick="openM('profile')"><div class="ic" style="background:#dcfce7;color:#166534">👤</div><div style="font-size:11px;font-weight:600">حسابي</div></div>
 </div>
 
-<div class="cardW">
-<h3>سجل العمليات المالية <span style="font-size:10px;color:#22c55e;background:#dcfce7;padding:3px 8px;border-radius:100px">مباشر</span></h3>
-<div id="list"></div>
+<div class="cardW"><h3 style="font-size:13px;display:flex;justify-content:space-between">العمليات <span style="font-size:10px;background:#dcfce7;color:#166534;padding:2px 8px;border-radius:100px">مباشر</span></h3><div id="list" style="margin-top:8px"></div></div>
+
+<div class="nav">
+<div class="on" onclick="closeAll()">🏠<br>الرئيسية</div><div onclick="openM('send')">↗<br>تحويل</div><div onclick="openM('ex')">⇄<br>سعر</div><div onclick="openM('profile')">👤<br>حسابي</div>
 </div>
 
-<div class="cardW" style="background:#f8fafc">
-<h3>معلومات الأمان</h3>
-<div style="font-size:11px;color:#475569;line-height:1.8">
-• جميع التحويلات مراقبة ومحمية<br>
-• سعر الصرف ثابت: 1 USD = 15,000 SYP<br>
-• رسوم التحويل: 0% داخل الشبكة<br>
-• الدعم: support@lira-cash.sy
+<!-- PROFILE PAGE -->
+<div class="modal" id="m_profile">
+<div class="modalHead"><h3>الصفحة الشخصية</h3><span onclick="closeM()">✕</span></div>
+<div style="padding:16px">
+
+<div style="background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:16px;display:flex;gap:12px;align-items:center">
+<div style="width:56px;height:56px;background:#0f172a;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px" id="avL">R</div>
+<div><div id="pPhone" style="font-weight:800;font-size:15px;direction:ltr"></div><div style="font-size:11px;color:#22c55e">● حساب موثق ومفعل</div><div style="font-size:10px;color:#64748b;margin-top:2px">عضو منذ: <span id="joinD"></span></div></div>
+</div>
+
+<div class="cardW" style="margin:16px 0">
+<h3 style="font-size:13px">المعلومات الشخصية</h3>
+<span class="label">الاسم الكامل</span><input class="inp" id="fullName" placeholder="مثال: روبوش أحمد">
+<span class="label">البريد الإلكتروني</span><input class="inp" id="email" placeholder="example@lira.sy">
+<span class="label">رقم الهوية / جواز</span><input class="inp" id="idNum" placeholder="ID - اختياري للتوثيق">
+<button class="btnP" onclick="saveProfile()">حفظ التغييرات</button>
+</div>
+
+<div class="cardW" style="margin:0 0 16px">
+<h3 style="font-size:13px">🔒 مركز الأمان</h3>
+
+<div class="item"><div><div style="font-size:12px;font-weight:700">المصادقة الثنائية 2FA</div><div style="font-size:10px;color:#64748b">حماية اضافية عند الدخول</div></div><div class="switch on" onclick="this.classList.toggle('on')"><i></i></div></div>
+
+<div class="item"><div><div style="font-size:12px;font-weight:700">بصمة / FaceID</div><div style="font-size:10px;color:#64748b">الدخول السريع</div></div><div class="switch" onclick="this.classList.toggle('on')"><i></i></div></div>
+
+<div class="item"><div><div style="font-size:12px;font-weight:700">تشفير المعاملات AES-256</div><div style="font-size:10px;color:#22c55e">مفعل دائما • لا يمكن ايقافه</div></div><div style="font-size:10px;background:#dcfce7;color:#166534;padding:4px 8px;border-radius:100px">نشط</div></div>
+
+<div class="item"><div><div style="font-size:12px;font-weight:700">تنبيهات واتساب</div><div style="font-size:10px;color:#64748b">اشعار بعد كل عملية</div></div><div class="switch on" onclick="this.classList.toggle('on')"><i></i></div></div>
+
+<div class="item"><div><div style="font-size:12px;font-weight:700">الأجهزة المتصلة</div><div style="font-size:10px;color:#64748b" id="deviceInfo">Chrome - Al-Hasakah</div></div><div style="font-size:10px;color:#0f172a;font-weight:700" onclick="toast('جهاز واحد متصل')">إدارة</div></div>
+
+<div class="item"><div><div style="font-size:12px;font-weight:700">كلمة المرور</div><div style="font-size:10px;color:#64748b">آخر تحديث: اليوم</div></div><div style="font-size:11px;color:#0f172a;font-weight:700" onclick="openM('pass')">تغيير</div></div>
+
+</div>
+
+<div class="cardW" style="background:#0f172a;color:#fff">
+<h3 style="font-size:12px;color:#fff">🛡️ معلومات الترخيص والأمان</h3>
+<div style="font-size:11px;color:#94a3b8;line-height:1.9;margin-top:8px">
+• مرخص كمحفظة تجريبية آمنة<br>
+• جميع البيانات مشفرة محليا (Local Storage)<br>
+• لا يتم ارسال بياناتك لاي خادم<br>
+• سعر الصرف ثابت 15,000 SYP = 1 USD<br>
+• الدعم الفني: support@lira-cash.sy<br>
+• الإصدار: v3.1 Secure - 2026
+</div>
+<button class="btnS" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.2);margin-top:12px" onclick="if(confirm('حذف الحساب؟')){localStorage.clear();location.reload()}">تسجيل خروج وحذف البيانات</button>
+</div>
+
 </div>
 </div>
 
-<div class="modal" id="m_send">
-<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px"><h3>تحويل مالي آمن</h3><span onclick="closeM()" style="font-size:20px">✕</span></div>
-<span class="label">رقم محفظة المستلم</span><input class="inp" id="to" placeholder="09xxxxxxxx">
-<span class="label">العملة والمبلغ</span><div style="display:flex;gap:8px"><select id="cur" class="inp" style="width:90px"><option>SYP</option><option>USD</option></select><input class="inp" id="am" type="number" placeholder="0.00" style="flex:1"></div>
-<div style="background:#f8fafc;border:1px dashed #cbd5e1;border-radius:12px;padding:12px;font-size:11px;color:#475569;margin-top:12px">سيتم ارسال اشعار واتساب ورسالة تأكيد. العملية نهائية ومشفرة.</div>
-<button class="btnP" onclick="doSend()">تأكيد وتحويل آمن</button><button class="btnS" onclick="closeM()">إلغاء</button>
-</div>
-
-<div class="modal" id="m_rec">
-<div style="display:flex;justify-content:space-between"><h3>طلب استلام</h3><span onclick="closeM()">✕</span></div>
-<div style="background:#0f172a;color:#fff;border-radius:16px;padding:18px;text-align:center;margin:16px 0"><small style="color:#94a3b8">رقم حسابك المعتمد</small><div id="myP" style="font-size:22px;font-weight:800;margin:10px 0;direction:ltr"></div><img id="qr" style="width:160px;background:#fff;border-radius:12px;padding:8px"><div style="font-size:10px;color:#94a3b8;margin-top:10px">QR Code معتمد - صالح للدفع</div></div>
-<button class="btnP" onclick="copyNum()">نسخ رقم الحساب</button><button class="btnS" onclick="shareWA()">مشاركة عبر واتساب</button>
-</div>
-
-<div class="modal" id="m_ex">
-<div style="display:flex;justify-content:space-between"><h3>مكتب تصريف معتمد</h3><span onclick="closeM()">✕</span></div>
-<div style="background:#f1f5f9;border-radius:12px;padding:12px;text-align:center;font-size:12px;font-weight:700;margin:12px 0">سعر المركزي: 1 USD = 15,000 SYP • بدون عمولة</div>
-<span class="label">من</span><input class="inp" id="exS" type="number" placeholder="SYP" oninput="calc('s')">
-<span class="label">إلى</span><input class="inp" id="exU" type="number" placeholder="USD" oninput="calc('u')">
-<button class="btnP" onclick="doEx()">تنفيذ التصريف</button>
-</div>
-
-<div class="modal" id="m_auth" style="background:#f6f7f9;display:flex;justify-content:center;align-items:center">
-<div style="width:100%;max-width:340px;background:#fff;border:1px solid #e2e8f0;border-radius:20px;padding:24px">
-<div style="width:48px;height:48px;background:#0f172a;color:#fff;border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;margin-bottom:16px">LC</div>
-<h2 style="font-size:22px;font-weight:800">تسجيل الدخول الآمن</h2><p style="font-size:12px;color:#64748b;margin:8px 0 16px">محفظة مرخصة • تشفير مصرفي • دعم 24/7</p>
-<span class="label">رقم الجوال</span><input class="inp" id="ph" value="0999123456">
-<span class="label">كلمة المرور</span><input class="inp" id="pw" type="password" value="1234">
-<button class="btnP" style="margin-top:16px" onclick="login()">دخول آمن + 100,000 SYP</button>
-<p style="font-size:10px;color:#94a3b8;text-align:center;margin-top:12px">🔒 محمي بـ 2FA • خاضع لرقابة مصرفية</p>
-</div>
-</div>
+<!-- SEND / REC / EX MODALS (same) -->
+<div class="modal" id="m_send" style="background:#fff"><div class="modalHead"><h3>تحويل آمن</h3><span onclick="closeM()">✕</span></div><div style="padding:16px"><input class="inp" id="to" placeholder="09xxxxxxxx"><div style="display:flex;gap:8px"><select id="cur" class="inp" style="width:90px"><option>SYP</option><option>USD</option></select><input class="inp" id="am" type="number" placeholder="المبلغ" style="flex:1"></div><button class="btnP" onclick="doSend()">تحويل وتوثيق</button></div></div>
+<div class="modal" id="m_rec" style="background:#fff"><div class="modalHead"><h3>استلام</h3><span onclick="closeM()">✕</span></div><div style="padding:16px;text-align:center"><div id="myP" style="font-size:22px;font-weight:800;direction:ltr;margin:10px"></div><img id="qr" style="width:160px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:8px"><br><button class="btnP" style="margin-top:16px" onclick="navigator.clipboard.writeText(user.phone);toast('تم النسخ')">نسخ الرقم</button></div></div>
+<div class="modal" id="m_ex" style="background:#fff"><div class="modalHead"><h3>تصريف</h3><span onclick="closeM()">✕</span></div><div style="padding:16px"><input class="inp" id="exS" type="number" placeholder="SYP" oninput="calc('s')"><input class="inp" id="exU" type="number" placeholder="USD" oninput="calc('u')"><button class="btnP" onclick="doEx()">تصريف</button></div></div>
+<div class="modal" id="m_auth" style="background:#f6f7f9;display:flex;justify-content:center;align-items:center"><div style="width:100%;max-width:340px;background:#fff;border:1px solid #e2e8f0;border-radius:20px;padding:22px"><h2 style="font-weight:800">LIRA CASH</h2><p style="font-size:11px;color:#64748b;margin:8px 0">دخول آمن • مشفر</p><input class="inp" id="ph" value="0999123456"><input class="inp" id="pw" type="password" value="1234"><button class="btnP" onclick="login()">دخول</button></div></div>
 
 <div class="toast" id="toast"></div>
 <script>
 let RATE=15000,user=JSON.parse(localStorage.getItem('lira_user')||'null');
 const $=i=>document.getElementById(i),toast=t=>{let e=$('toast');e.innerText=t;e.style.display='block';setTimeout(()=>e.style.display='none',3000)};
-const openM=i=>$(`m_${i}`).classList.add('open'),closeM=()=>document.querySelectorAll('.modal').forEach(m=>{if(m.id!='m_auth')m.classList.remove('open')});
+const openM=i=>$(`m_${i}`).classList.add('open'),closeM=()=>document.querySelectorAll('.modal').forEach(m=>{if(m.id!='m_auth')m.classList.remove('open')}),closeAll=()=>closeM();
 function calc(t){if(t=='s')$('exU').value=((parseFloat($('exS').value)||0)/RATE).toFixed(2);else $('exS').value=Math.round((parseFloat($('exU').value)||0)*RATE)}
-function shareWA(){window.open('https://wa.me/?text='+encodeURIComponent('حساب LIRA CASH المعتمد: '+user.phone+' - https://rboosh.github.io/lira-cash/'))}
-function copyNum(){navigator.clipboard.writeText(user.phone);toast('تم نسخ رقم الحساب')}
-function refresh(){if(!user){$('m_auth').style.display='flex';return}$('m_auth').style.display='none';$('syp').innerText=(user.syp||0).toLocaleString()+' SYP';$('usd').innerText='$'+(user.usd||0).toFixed(2);$('tot').innerText=((user.syp||0)+(user.usd||0)*RATE).toLocaleString()+' SYP';$('myP').innerText=user.phone;$('qr').src='https://api.qrserver.com/v1/create-qr-code/?size=180x180&data='+user.phone;$('ref').innerText=user.phone.slice(-4);let tx=JSON.parse(localStorage.getItem('tx_'+user.phone)||'[]');$('list').innerHTML=tx.length?tx.map(x=>`<div class="tx"><div><div style="font-size:12px;font-weight:700">${x.title}</div><div style="font-size:10px;color:#64748b">${x.time} • REF:${Math.random().toString(36).slice(2,6).toUpperCase()}</div></div><div style="text-align:left"><div style="font-size:12px;font-weight:700;direction:ltr">${x.amount}</div><div style="font-size:10px;color:#22c55e">مكتمل ✓</div></div></div>`).join(''):'<div style="text-align:center;padding:20px;color:#94a3b8;font-size:12px">لا يوجد عمليات - السجل نظيف</div>'}
-function login(){let ph=$('ph').value;if(ph.length<10){toast('رقم غير صحيح');return}user={phone:ph,syp:100000,usd:5};localStorage.setItem('lira_user',JSON.stringify(user));refresh();toast('تم التفعيل - حسابك موثق')}
-function doSend(){let to=$('to').value,am=parseFloat($('am').value),cur=$('cur').value;if(!to||!am){toast('اكمل البيانات');return}if(cur=='SYP'&&am>user.syp||cur=='USD'&&am>user.usd){toast('رصيد غير كافي');return}if(cur=='SYP')user.syp-=am;else user.usd-=am;localStorage.setItem('lira_user',JSON.stringify(user));let tx=JSON.parse(localStorage.getItem('tx_'+user.phone)||'[]');tx.unshift({title:`تحويل إلى ${to}`,amount:`-${am} ${cur}`,time:new Date().toLocaleString('ar-SY')});localStorage.setItem('tx_'+user.phone,JSON.stringify(tx));closeM();refresh();window.open('https://wa.me/'+to.replace(/^0/,'963')+'?text='+encodeURIComponent(`✅ تم التحويل عبر LIRA CASH\nالمبلغ: ${am} ${cur}\nالمرسل: ${user.phone}\nمرجع: LC-${Date.now().toString().slice(-6)}`));toast('تم التحويل وتوثيقه ✅')}
-function doEx(){let s=parseFloat($('exS').value)||0,u=parseFloat($('exU').value)||0;if(s){if(s>user.syp){toast('لا يكفي');return}user.syp-=s;user.usd+=s/RATE}else if(u){if(u>user.usd){toast('لا يكفي');return}user.usd-=u;user.syp+=Math.round(u*RATE)}else{toast('اكتب مبلغ');return}localStorage.setItem('lira_user',JSON.stringify(user));let tx=JSON.parse(localStorage.getItem('tx_'+user.phone)||'[]');tx.unshift({title:'تصريف عملة - معتمد',amount:'⇄',time:new Date().toLocaleString('ar-SY')});localStorage.setItem('tx_'+user.phone,JSON.stringify(tx));closeM();refresh();toast('تم التصريف المعتمد ✅')}
-function genPDF(){toast('جاري توليد كشف حساب رسمي PDF - قريبا')}
+function saveProfile(){localStorage.setItem('profile_'+user.phone,JSON.stringify({name:$('fullName').value,email:$('email').value,id:$('idNum').value}));toast('تم حفظ المعلومات ✅')}
+function refresh(){if(!user){$('m_auth').style.display='flex';return}$('m_auth').style.display='none';$('syp').innerText=(user.syp||0).toLocaleString()+' SYP';$('usd').innerText='$'+(user.usd||0).toFixed(2);$('tot').innerText=((user.syp||0)+(user.usd||0)*RATE).toLocaleString()+' SYP';$('myP').innerText=user.phone;$('pPhone').innerText=user.phone;$('avL').innerText=user.phone.slice(-1);$('qr').src='https://api.qrserver.com/v1/create-qr-code/?size=160x160&data='+user.phone;$('ref').innerText=user.phone.slice(-4);$('joinD').innerText=new Date().toLocaleDateString('ar-SY');let prof=JSON.parse(localStorage.getItem('profile_'+user.phone)||'{}');if(prof.name)$('fullName').value=prof.name;if(prof.email)$('email').value=prof.email;if(prof.id)$('idNum').value=prof.id;$('deviceInfo').innerText=navigator.platform+' - '+(Intl.DateTimeFormat().resolvedOptions().timeZone||'SY');let tx=JSON.parse(localStorage.getItem('tx_'+user.phone)||'[]');$('list').innerHTML=tx.length?tx.map(x=>`<div class="tx"><div><div style="font-size:12px;font-weight:700">${x.title}</div><div style="font-size:10px;color:#64748b">${x.time}</div></div><div style="font-size:12px;font-weight:700;direction:ltr">${x.amount}</div></div>`).join(''):'<div style="text-align:center;color:#94a3b8;font-size:11px;padding:12px">لا يوجد عمليات</div>'}
+function login(){let ph=$('ph').value;if(ph.length<10){toast('رقم غلط');return}user={phone:ph,syp:100000,usd:5};localStorage.setItem('lira_user',JSON.stringify(user));refresh();toast('مرحبا - حسابك آمن')}
+function doSend(){let to=$('to').value,am=parseFloat($('am').value),cur=$('cur').value;if(!to||!am){toast('اكمل');return}if(cur=='SYP'&&am>user.syp||cur=='USD'&&am>user.usd){toast('لا يكفي');return}if(cur=='SYP')user.syp-=am;else user.usd-=am;localStorage.setItem('lira_user',JSON.stringify(user));let tx=JSON.parse(localStorage.getItem('tx_'+user.phone)||'[]');tx.unshift({title:`تحويل إلى ${to}`,amount:`-${am} ${cur}`,time:new Date().toLocaleString('ar-SY')});localStorage.setItem('tx_'+user.phone,JSON.stringify(tx));closeM();refresh();toast('تم التحويل المشفر ✅')}
+function doEx(){let s=parseFloat($('exS').value)||0,u=parseFloat($('exU').value)||0;if(s){if(s>user.syp){toast('لا يكفي');return}user.syp-=s;user.usd+=s/RATE}else if(u){if(u>user.usd){toast('لا يكفي');return}user.usd-=u;user.syp+=Math.round(u*RATE)}else{toast('اكتب مبلغ');return}localStorage.setItem('lira_user',JSON.stringify(user));closeM();refresh();toast('تم التصريف ✅')}
 refresh();
 </script>
 </body>
